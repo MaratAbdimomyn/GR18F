@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            margin-right: 40px;
+            width: 80px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+    <h3>My Users</h3>
+    <ul style='display: flex; flex-direction: row;'>
+        <li>Name</li>
+        <li>Age</li>
+        <li>Status</li>
+    </ul>
+    <ul>
+        {% for i in one %}
+        <div style='display: flex; flex-direction: row;'>
+        <li><a href={% url 'about' i.pk %}> {{ i.name }} </a></li>
+        <li> {{ i.age }} </li>
+        <li> {{ i.status }} </li>
+        </div>
+        {% endfor %}
+    </ul>
+    <p><a href={% url 'create' %}>Создать пользователя</a></p>
+</body>
+</html>
