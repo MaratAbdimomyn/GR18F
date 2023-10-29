@@ -21,3 +21,4 @@ class CreateUser(CreateView):
     model = MyUsers
     template_name = 'create.html'
     fields = ['name', 'age', 'status']
+    success_url = reverse_lazy('home')
